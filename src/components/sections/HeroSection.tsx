@@ -30,13 +30,13 @@ export default function HeroSection() {
         >
           {/* 상단 라벨 */}
           <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.35em] text-gold/80">
-            (가칭) 한영자장학재단
+            한영자 희망 장학재단
           </p>
 
           {/* 메인 헤드라인 */}
           <h1 className="font-heading text-white leading-[1.18]">
             <span className="block text-[2.25rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight">
-              보육원 출신 청년의 미래,
+              자립준비청년의 미래,
             </span>
             <span className="block text-[2.25rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight mt-2 text-gold">
               함께 열어갑니다.
@@ -45,8 +45,8 @@ export default function HeroSection() {
 
           {/* 서브카피 */}
           <p className="mt-7 text-[15.5px] sm:text-[17px] leading-[1.9] text-white/72 max-w-2xl">
-            삼양그룹이 설립하는 한영자장학재단은<br className="hidden sm:block" />
-            보육원 출신 자립준비청년 대학생들이 경제적 어려움 없이<br className="hidden sm:block" />
+            삼양그룹이 설립하는 한영자 희망 장학재단은<br className="hidden sm:block" />
+            자립준비청년 대학생들이 경제적 어려움 없이<br className="hidden sm:block" />
             학업에 집중하고 미래를 설계할 수 있도록 함께합니다.
           </p>
 

@@ -28,7 +28,7 @@ export default function MissionSection() {
                 창업회장님의 경영철학인 <strong className="text-navy-900 font-semibold">
                 &ldquo;인류의 보편적 가치와 행복증진&rdquo;</strong>을 구현하기 위해,
                 사회적 지원이 가장 필요한 곳에 실질적으로 도움을 주는
-                한영자장학재단을 설립합니다.
+                한영자 희망 장학재단을 설립합니다.
               </p>
             </div>
 

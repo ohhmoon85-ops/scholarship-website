@@ -54,9 +54,9 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-white font-heading leading-none">
-                  (가칭) 한영자장학재단
+                  한영자 희망 장학재단
                 </p>
-                <p className="text-[10px] text-white/35 mt-0.5">Hanyoungja Scholarship Foundation</p>
+                <p className="text-[10px] text-white/35 mt-0.5">Hanyoungja Hope Scholarship Foundation</p>
               </div>
             </div>
 
@@ -149,7 +149,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-[12px] text-white/20 flex-shrink-0">
-              © {new Date().getFullYear()} (가칭) 한영자장학재단. All rights reserved.
+              © {new Date().getFullYear()} 한영자 희망 장학재단. All rights reserved.
             </p>
           </div>
         </div>

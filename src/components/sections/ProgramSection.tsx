@@ -49,7 +49,7 @@ export default function ProgramSection() {
 
               <div className="mt-6 space-y-3.5 text-[15px] leading-[1.85] text-navy-600">
                 <p>
-                  한영자장학재단은 <strong className="text-navy-900 font-semibold">보육원 출신 자립준비청년 대학생</strong>을
+                  한영자 희망 장학재단은 <strong className="text-navy-900 font-semibold">자립준비청년 대학생</strong>을
                   대상으로 연 1회 장학생을 선발하여 1인당 400만원의 장학금을 지급합니다.
                 </p>
                 <p>
@@ -112,19 +112,19 @@ export default function ProgramSection() {
                 Who We Support
               </p>
               <h2 className="font-heading text-navy-900 text-[2rem] sm:text-[2.4rem] font-bold leading-tight tracking-tight">
-                보육원 출신<br />
-                자립준비청년 대학생
+                자립준비청년<br />
+                대학생
               </h2>
 
               <p className="mt-6 text-[15px] leading-[1.9] text-navy-600">
-                보육원에서 자라 자립을 준비하는 청년들은 누구보다 큰 잠재력을 지니고 있습니다.
+                자립준비청년들은 누구보다 큰 잠재력을 지니고 있습니다.
                 그러나 출발선에서부터 이미 불평등을 마주하고 있습니다.
-                한영자장학재단은 이 간극을 외면하지 않겠습니다.
+                한영자 희망 장학재단은 이 간극을 외면하지 않겠습니다.
               </p>
 
               <div className="mt-7 space-y-4">
                 {[
-                  { title: "지원 대상", desc: "보육원 출신 자립준비청년 대학생 (전국)" },
+                  { title: "지원 대상", desc: "자립준비청년 대학생 (전국)" },
                   { title: "연령 기준", desc: "만 18세 ~ 만 25세 (본인 신청 시 연장 가능)" },
                   { title: "선발 시기", desc: "연 1회 (이사회 결의로 확정)" },
                   { title: "협력 기관", desc: "한국아동복지협회 (협의 중)" },
