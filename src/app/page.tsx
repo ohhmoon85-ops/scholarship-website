@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
+import AboutSection from "@/components/sections/AboutSection";
 import NewsSection from "@/components/sections/NewsSection";
 import YoutubeSection from "@/components/sections/YoutubeSection";
 
@@ -16,6 +17,7 @@ export default function HomePage() {
         <div className="pt-[104px]">
           <HeroSection />
         </div>
+        <AboutSection />
         <NewsSection />
         <YoutubeSection />
       </main>

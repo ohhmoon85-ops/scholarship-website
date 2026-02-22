@@ -133,7 +133,7 @@ export default function Header() {
                     <Link
                       href={item.href}
                       className={cn(
-                        "flex items-center gap-1 px-5 text-[13px] font-medium transition-colors",
+                        "flex items-center gap-1 px-5 text-[15px] font-medium transition-colors",
                         "border-b-2 border-transparent",
                         activeMenu === item.href
                           ? "text-white border-gold"
