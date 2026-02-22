@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { BookOpen, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const footerNav = [
   {
@@ -48,15 +49,9 @@ export default function Footer() {
           {/* 왼쪽: 재단 정보 */}
           <div className="space-y-6">
             {/* 로고 */}
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold shadow">
-                <BookOpen className="h-5 w-5 text-navy-950" strokeWidth={2.5} />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-white font-heading leading-none">
-                  한영자 희망 장학재단
-                </p>
-                <p className="text-[10px] text-white/35 mt-0.5">Hanyoungja Hope Scholarship Foundation</p>
+            <div>
+              <div className="bg-white rounded-xl px-3 py-2 inline-block">
+                <Image src="/logo.png" alt="한영자 희망 장학재단" width={180} height={44} className="h-10 w-auto object-contain" />
               </div>
             </div>
 

@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ChevronDown, Menu, X, BookOpen } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 const navItems = [
   {
@@ -107,17 +108,9 @@ export default function Header() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-[68px] items-center justify-between">
               {/* 로고 */}
-              <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold shadow-md">
-                  <BookOpen className="h-5 w-5 text-navy-950" strokeWidth={2.5} />
-                </div>
-                <div>
-                  <p className="text-[15px] font-bold text-white tracking-tight font-heading leading-none">
-                    장학재단
-                  </p>
-                  <p className="text-[10px] text-white/40 leading-tight mt-0.5">
-                    Scholarship Foundation
-                  </p>
+              <Link href="/" className="flex items-center flex-shrink-0">
+                <div className="bg-white rounded-xl px-3 py-1.5">
+                  <Image src="/logo.png" alt="한영자 희망 장학재단" width={180} height={44} className="h-10 w-auto object-contain" />
                 </div>
               </Link>
 
@@ -227,11 +220,10 @@ export default function Header() {
           )}
         >
           <div className="flex items-center justify-between px-5 h-[105px] border-b border-navy-700">
-            <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gold">
-                <BookOpen className="h-4 w-4 text-navy-950" strokeWidth={2.5} />
+            <Link href="/" onClick={() => setIsMobileOpen(false)}>
+              <div className="bg-white rounded-xl px-3 py-1.5">
+                <Image src="/logo.png" alt="한영자 희망 장학재단" width={150} height={36} className="h-9 w-auto object-contain" />
               </div>
-              <span className="text-sm font-bold text-white font-heading">장학재단</span>
             </Link>
             <button onClick={() => setIsMobileOpen(false)} className="p-1.5 text-white/60 hover:text-white">
               <X className="h-5 w-5" />
