@@ -1,26 +1,232 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* ── 폰트 ── */
+  --font-sans:    var(--font-pretendard);
+  --font-heading: var(--font-noto-serif-kr);
+
+  /* ── 색상 매핑 ── */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* ── 반경 ── */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* ── 장학재단 네이비 팔레트 ── */
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+  --color-navy-500: var(--navy-500);
+  --color-navy-400: var(--navy-400);
+  --color-navy-200: var(--navy-200);
+  --color-navy-100: var(--navy-100);
+  --color-navy-50:  var(--navy-50);
+
+  /* ── 골드 포인트 ── */
+  --color-gold:       var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-muted: var(--gold-muted);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─────────────────────────────────────────── */
+/*  CSS 변수 정의                              */
+/* ─────────────────────────────────────────── */
+:root {
+  --radius: 0.5rem;
+
+  /* 네이비 팔레트: 실제 기관 홈페이지에 어울리는 차분한 네이비 */
+  --navy-950: oklch(0.17 0.055 258);
+  --navy-900: oklch(0.22 0.068 258);
+  --navy-800: oklch(0.28 0.085 258);
+  --navy-700: oklch(0.35 0.095 258);
+  --navy-600: oklch(0.43 0.1   258);
+  --navy-500: oklch(0.52 0.09  258);
+  --navy-400: oklch(0.62 0.07  258);
+  --navy-200: oklch(0.86 0.025 258);
+  --navy-100: oklch(0.93 0.015 258);
+  --navy-50:  oklch(0.97 0.008 258);
+
+  /* 골드: 격식 있는 황금색 */
+  --gold:       oklch(0.70 0.13 84);
+  --gold-light: oklch(0.86 0.09 84);
+  --gold-muted: oklch(0.70 0.13 84 / 0.15);
+
+  /* shadcn 기본 테마 */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.17 0.055 258);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.17 0.055 258);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.17 0.055 258);
+  --primary: oklch(0.22 0.068 258);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.93 0.015 258);
+  --secondary-foreground: oklch(0.22 0.068 258);
+  --muted: oklch(0.97 0.008 258);
+  --muted-foreground: oklch(0.50 0.04  258);
+  --accent: oklch(0.70 0.13 84);
+  --accent-foreground: oklch(0.17 0.055 258);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.91 0.012 258);
+  --input: oklch(0.91 0.012 258);
+  --ring: oklch(0.43 0.1 258);
+  --chart-1: oklch(0.43 0.1 258);
+  --chart-2: oklch(0.70 0.13 84);
+  --chart-3: oklch(0.58 0.08 258);
+  --chart-4: oklch(0.84 0.09 84);
+  --chart-5: oklch(0.35 0.095 258);
+  --sidebar: oklch(0.22 0.068 258);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.70 0.13 84);
+  --sidebar-primary-foreground: oklch(0.17 0.055 258);
+  --sidebar-accent: oklch(0.28 0.085 258);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.35 0.095 258);
+  --sidebar-ring: oklch(0.43 0.1 258);
+}
+
+/* ─────────────────────────────────────────── */
+/*  기본 스타일                                */
+/* ─────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-pretendard), 'Apple SD Gothic Neo', 'Malgun Gothic',
+      sans-serif;
+    font-feature-settings: "kern" 1;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* 제목 공통 */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-noto-serif-kr), 'Apple SD Gothic Neo', serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    word-break: keep-all;
+  }
+
+  /* 본문 링크 기본 */
+  a {
+    transition: color 0.15s ease;
+  }
+
+  /* 선택 영역 */
+  ::selection {
+    background: oklch(0.70 0.13 84 / 0.25);
+    color: oklch(0.17 0.055 258);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─────────────────────────────────────────── */
+/*  prose (게시글 본문) 커스텀 스타일           */
+/* ─────────────────────────────────────────── */
+@layer components {
+  .prose-scholarship {
+    --tw-prose-body:           oklch(0.28 0.085 258);
+    --tw-prose-headings:       oklch(0.17 0.055 258);
+    --tw-prose-lead:           oklch(0.43 0.1 258);
+    --tw-prose-links:          oklch(0.22 0.068 258);
+    --tw-prose-bold:           oklch(0.17 0.055 258);
+    --tw-prose-counters:       oklch(0.52 0.09 258);
+    --tw-prose-bullets:        oklch(0.70 0.13 84);
+    --tw-prose-hr:             oklch(0.91 0.012 258);
+    --tw-prose-quotes:         oklch(0.35 0.095 258);
+    --tw-prose-quote-borders:  oklch(0.70 0.13 84);
+    --tw-prose-captions:       oklch(0.52 0.09 258);
+    --tw-prose-code:           oklch(0.22 0.068 258);
+    --tw-prose-pre-code:       oklch(0.93 0.015 258);
+    --tw-prose-pre-bg:         oklch(0.22 0.068 258);
+    --tw-prose-th-borders:     oklch(0.86 0.025 258);
+    --tw-prose-td-borders:     oklch(0.93 0.015 258);
+
+    font-family: var(--font-pretendard), sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.85;
+    letter-spacing: -0.01em;
+  }
+
+  /* prose 내 제목은 serif 유지 */
+  .prose-scholarship :where(h2, h3, h4) {
+    font-family: var(--font-noto-serif-kr), serif;
+    letter-spacing: -0.025em;
+  }
+
+  /* prose 내 표 스타일 */
+  .prose-scholarship :where(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .prose-scholarship :where(th) {
+    background: oklch(0.93 0.015 258);
+    font-weight: 600;
+    padding: 0.625rem 1rem;
+    text-align: left;
+  }
+  .prose-scholarship :where(td) {
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid oklch(0.93 0.015 258);
+  }
+  .prose-scholarship :where(tr:last-child td) {
+    border-bottom: none;
+  }
+
+  /* prose 내 인용구 */
+  .prose-scholarship :where(blockquote) {
+    background: oklch(0.97 0.008 258);
+    border-radius: 0.5rem;
+    padding: 0.875rem 1.25rem;
+    font-style: normal;
+    font-size: 0.875rem;
+  }
+
+  /* prose 내 코드 */
+  .prose-scholarship :where(code)::before,
+  .prose-scholarship :where(code)::after {
+    content: none;
+  }
 }
+
+/* ─────────────────────────────────────────── */
+/*  커스텀 스크롤바                            */
+/* ─────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: oklch(0.97 0.008 258); }
+::-webkit-scrollbar-thumb  { background: oklch(0.52 0.09 258 / 0.4);
+                              border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: oklch(0.35 0.095 258 / 0.7); }
