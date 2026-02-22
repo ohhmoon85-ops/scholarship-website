@@ -104,14 +104,12 @@ export default function Header() {
         </div>
 
         {/* 메인 헤더 */}
-        <div className="bg-navy-900">
+        <div className="bg-white border-b border-navy-100">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-[68px] items-center justify-between">
               {/* 로고 */}
               <Link href="/" className="flex items-center flex-shrink-0">
-                <div className="bg-white rounded-xl px-3 py-1.5">
-                  <Image src="/logo.png" alt="한영자 희망 장학재단" width={180} height={44} className="h-10 w-auto object-contain" />
-                </div>
+                <Image src="/logo.png" alt="한영자 희망 장학재단" width={220} height={54} className="h-12 w-auto object-contain" />
               </Link>
 
               {/* 데스크탑 GNB */}
@@ -129,15 +127,15 @@ export default function Header() {
                         "flex items-center gap-1 px-5 text-[15px] font-medium transition-colors",
                         "border-b-2 border-transparent",
                         activeMenu === item.href
-                          ? "text-white border-gold"
-                          : "text-white/70 hover:text-white hover:border-white/30"
+                          ? "text-navy-900 border-gold"
+                          : "text-navy-500 hover:text-navy-900 hover:border-navy-200"
                       )}
                     >
                       {item.label}
                       <ChevronDown
                         className={cn(
                           "h-3.5 w-3.5 transition-transform duration-200",
-                          activeMenu === item.href ? "rotate-180 text-gold" : "text-white/40"
+                          activeMenu === item.href ? "rotate-180 text-gold" : "text-navy-300"
                         )}
                       />
                     </Link>
@@ -180,7 +178,7 @@ export default function Header() {
                 </Button>
 
                 <button
-                  className="lg:hidden p-2 text-white/80 hover:text-white"
+                  className="lg:hidden p-2 text-navy-600 hover:text-navy-900"
                   onClick={() => setIsMobileOpen(!isMobileOpen)}
                   aria-label={isMobileOpen ? "메뉴 닫기" : "메뉴 열기"}
                 >

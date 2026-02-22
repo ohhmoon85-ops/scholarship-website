@@ -28,7 +28,7 @@ export default function HeroSection() {
         priority
       />
       {/* 어두운 오버레이 */}
-      <div className="absolute inset-0 bg-navy-950/72" />
+      <div className="absolute inset-0 bg-navy-950/55" />
 
       {/* ── 중앙 콘텐츠 ── */}
       <div className="relative z-10 flex flex-1 items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
