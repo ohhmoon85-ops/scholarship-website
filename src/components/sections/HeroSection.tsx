@@ -21,7 +21,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* 배경 사진 */}
       <Image
-        src="/hero-bg.jpg"
+        src="/hero-bg.png"
         alt="장학재단 배경"
         fill
         className="object-cover object-center"
