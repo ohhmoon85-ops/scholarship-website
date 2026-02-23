@@ -155,7 +155,7 @@ export default function OrganizationPage() {
               ))}
             </div>
             <p className="mt-4 text-[13px] text-navy-400">
-              * 출연 재산 합계: 기본재산 150억원 + 보통운영재산 45억원 (총 195억원)
+              * 출연 재산 합계: 기본재산 50억원 + 보통운영재산 45억원 (총 95억원)
             </p>
           </div>
 

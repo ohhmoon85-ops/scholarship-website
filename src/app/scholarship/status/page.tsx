@@ -36,7 +36,7 @@ export default function StatusPage() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10 text-center">
               {[
-                { value: "100명", label: "선발 예정" },
+                { value: "50명", label: "선발 예정" },
                 { value: "400만원", label: "1인 장학금" },
                 { value: "전국", label: "모집 지역" },
               ].map((s) => (

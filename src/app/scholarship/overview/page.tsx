@@ -12,7 +12,7 @@ const programs = [
     num: "01",
     title: "자립준비청년 대학생 장학사업",
     desc: "연 1회 전국 자립준비청년 대학생을 선발하여 1인당 400만원의 장학금을 지급합니다. 경제적 부담 없이 학업에 집중하고 미래를 설계할 수 있도록 지원합니다.",
-    highlights: ["연 100명 선발", "1인당 400만원", "전국 대상", "이사회 심사"],
+    highlights: ["연 50명 선발", "1인당 400만원", "전국 대상", "이사회 심사"],
   },
   {
     num: "02",
@@ -29,9 +29,9 @@ const programs = [
 ];
 
 const stats = [
-  { value: "100명", label: "연간 선발 규모" },
+  { value: "50명", label: "연간 선발 규모" },
   { value: "400만원", label: "1인 장학금" },
-  { value: "4억원", label: "연간 지급 예정액" },
+  { value: "2억원", label: "연간 지급 예정액" },
   { value: "전국", label: "지원 대상 지역" },
 ];
 
@@ -111,7 +111,7 @@ export default function OverviewPage() {
               <div className="flex-1 rounded-xl bg-navy-50 border border-navy-100 p-5">
                 <p className="text-[12px] font-bold uppercase tracking-wide text-navy-400 mb-1">1단계 (현재)</p>
                 <p className="text-[14px] font-semibold text-navy-900">자립준비청년 대학생</p>
-                <p className="text-[13px] text-navy-500 mt-0.5">연 100명, 400만원</p>
+                <p className="text-[13px] text-navy-500 mt-0.5">연 50명, 400만원</p>
               </div>
               <div className="flex items-center text-navy-300 text-xl px-2 hidden sm:flex">→</div>
               <div className="flex-1 rounded-xl bg-gold/5 border border-gold/20 p-5">

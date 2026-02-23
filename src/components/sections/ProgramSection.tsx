@@ -3,9 +3,9 @@ import Link from "next/link";
 import { FadeInSection, StaggerSection, StaggerItem } from "@/components/animations/FadeIn";
 
 const highlights = [
-  { value: "100명", label: "연간 선발 규모" },
+  { value: "50명", label: "연간 선발 규모" },
   { value: "400만원", label: "1인 장학금" },
-  { value: "4억원", label: "연간 지급 예정액" },
+  { value: "2억원", label: "연간 지급 예정액" },
   { value: "전국", label: "지원 대상 지역" },
 ];
 

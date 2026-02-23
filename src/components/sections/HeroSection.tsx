@@ -63,8 +63,8 @@ export default function HeroSection() {
           {/* 핵심 수치 3종 */}
           <div className="mt-9 grid grid-cols-3 gap-4 sm:gap-8 w-full max-w-sm sm:max-w-md">
             {[
-              { value: "150억원", label: "설립 기본재산" },
-              { value: "100명", label: "연간 선발 규모" },
+              { value: "50억원", label: "설립 기본재산" },
+              { value: "50명", label: "연간 선발 규모" },
               { value: "400만원", label: "1인 장학금" },
             ].map((s) => (
               <div key={s.label} className="flex flex-col items-center">

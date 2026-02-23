@@ -55,7 +55,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                 {[
                   { label: "재단 유형", value: "재단법인 비영리 공의법인" },
-                  { label: "설립 기본재산", value: "150억원 (삼양그룹 계열사 출연)" },
+                  { label: "설립 기본재산", value: "50억원 (삼양그룹 계열사 출연)" },
                   { label: "주요 사업", value: "자립준비청년 대학생 장학 및 자립지원" },
                   { label: "이사장", value: "전동진 (내정)" },
                   { label: "1기 수여식", value: "2026년 4월 30일 예정" },

@@ -76,7 +76,7 @@ export default function MissionSection() {
                   설립 기본재산
                 </p>
                 <p className="text-3xl font-bold text-navy-900 font-heading leading-none">
-                  150<span className="text-xl font-semibold text-navy-500">억원</span>
+                  50<span className="text-xl font-semibold text-navy-500">억원</span>
                 </p>
                 <p className="mt-1 text-[12px] text-navy-400">삼양그룹 계열사 출연</p>
               </div>
