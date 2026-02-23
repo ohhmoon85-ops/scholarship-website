@@ -109,7 +109,7 @@ export default function Header() {
             <div className="flex h-[68px] items-center justify-between">
               {/* 로고 */}
               <Link href="/" className="flex items-center flex-shrink-0">
-                <Image src="/logo2.png" alt="한영자 희망 장학재단" width={220} height={54} className="h-12 w-auto object-contain" />
+                <Image src="/logo3.png" alt="한영자 희망 장학재단" width={260} height={64} className="h-14 w-auto object-contain" />
               </Link>
 
               {/* 데스크탑 GNB */}
@@ -220,7 +220,7 @@ export default function Header() {
           <div className="flex items-center justify-between px-5 h-[105px] border-b border-navy-700">
             <Link href="/" onClick={() => setIsMobileOpen(false)}>
               <div className="bg-white rounded-xl px-3 py-1.5">
-                <Image src="/logo2.png" alt="한영자 희망 장학재단" width={150} height={36} className="h-9 w-auto object-contain" />
+                <Image src="/logo3.png" alt="한영자 희망 장학재단" width={150} height={36} className="h-9 w-auto object-contain" />
               </div>
             </Link>
             <button onClick={() => setIsMobileOpen(false)} className="p-1.5 text-white/60 hover:text-white">
