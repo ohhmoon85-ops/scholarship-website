@@ -49,7 +49,7 @@ export default function HeroSection() {
               당신의 꿈이 멈추지 않도록,
             </span>
             <span className="block text-[2.25rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight mt-2">
-              우리가 곁에 서겠습니다.
+              우리가 곁에 있겠습니다.
             </span>
           </h1>
 
