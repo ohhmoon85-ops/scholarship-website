@@ -39,7 +39,7 @@ export default function HeroSection() {
           className="flex flex-col items-center text-center max-w-4xl"
         >
           {/* 상단 라벨 */}
-          <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.35em] text-gold/80">
+          <p className="mb-6 text-[11px] lg:text-[15px] font-bold uppercase tracking-[0.35em] text-gold/80">
             한영자 희망 장학재단 · Samyang Initiative
           </p>
 
