@@ -45,19 +45,18 @@ export default function HeroSection() {
 
           {/* 헤드라인 */}
           <h1 className="font-heading text-white leading-[1.18]">
-            <span className="block text-[2.25rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight">
-              자립준비청년의 미래,
+            <span className="block text-[2.25rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-gold">
+              당신의 꿈이 멈추지 않도록,
             </span>
-            <span className="block text-[2.25rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight mt-2 text-gold">
-              함께 열어갑니다.
+            <span className="block text-[2.25rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight mt-2">
+              우리가 곁에 서겠습니다.
             </span>
           </h1>
 
           {/* 서브카피 */}
           <p className="mt-6 text-[15px] sm:text-[16.5px] leading-[1.9] text-white/70 max-w-2xl">
-            삼양그룹이 설립하는 한영자 희망 장학재단은
-            자립준비청년 대학생들이 경제적 어려움 없이
-            학업에 집중하고 미래를 설계할 수 있도록 함께합니다.
+            오늘의 배움이 내일의 희망이 되는 곳,<br />
+            한영자 희망 장학재단이 함께합니다.
           </p>
 
           {/* 핵심 수치 3종 */}
