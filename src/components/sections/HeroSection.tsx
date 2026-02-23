@@ -56,7 +56,7 @@ export default function HeroSection() {
           {/* 서브카피 */}
           <p className="mt-6 text-[15px] sm:text-[16.5px] leading-[1.9] text-white/70 max-w-2xl">
             오늘의 배움이 내일의 희망이 되는 곳,<br />
-            한영자 희망 장학재단이 함께합니다.
+            <span className="font-semibold text-white">한영자 희망 장학재단</span>이 함께합니다.
           </p>
 
           {/* 핵심 수치 3종 */}
