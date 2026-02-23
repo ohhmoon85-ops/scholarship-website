@@ -51,7 +51,7 @@ export default function Footer() {
             {/* 로고 */}
             <div>
               <div className="bg-white rounded-xl px-3 py-2 inline-block">
-                <Image src="/logo.png" alt="한영자 희망 장학재단" width={180} height={44} className="h-10 w-auto object-contain" />
+                <Image src="/logo2.png" alt="한영자 희망 장학재단" width={180} height={44} className="h-10 w-auto object-contain" />
               </div>
             </div>
 
