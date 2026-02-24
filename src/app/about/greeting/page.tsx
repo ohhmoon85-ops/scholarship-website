@@ -27,10 +27,10 @@ export default function GreetingPage() {
           <div className="bg-white rounded-2xl shadow-sm border border-navy-100 overflow-hidden">
 
             {/* 2단 레이아웃 */}
-            <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr]">
+            <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr]">
 
               {/* 왼쪽: 사진 */}
-              <div className="relative h-56 lg:h-auto min-h-[340px]">
+              <div className="relative h-28 lg:h-auto min-h-[170px]">
                 <Image
                   src="/chairman.jpg"
                   alt="전동진 이사장"
