@@ -97,7 +97,7 @@ export default function Footer() {
 
             {/* 법적 정보 */}
             <p className="text-[12px] text-white/20">
-              이사장: 전동진 (내정) &nbsp;|&nbsp; 재단법인 등록 절차 진행 중
+              이사장: 전동진 &nbsp;|&nbsp; 재단법인 등록 절차 진행 중
             </p>
           </div>
 

@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 };
 
 const executives = [
-  { role: "이사장", name: "전동진", note: "내정", org: "삼양그룹" },
-  { role: "사무국장", name: "임재영", note: "내정", org: "" },
+  { role: "이사장", name: "전동진", note: "", org: "삼양그룹" },
+  { role: "사무국장", name: "임재영", note: "", org: "" },
   { role: "재무담당", name: "김영만", note: "", org: "" },
   { role: "장학사업팀장", name: "강정호", note: "", org: "" },
   { role: "재무회계팀장", name: "정호기", note: "", org: "" },
