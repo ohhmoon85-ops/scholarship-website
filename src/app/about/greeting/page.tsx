@@ -27,28 +27,26 @@ export default function GreetingPage() {
           <div className="bg-white rounded-2xl shadow-sm border border-navy-100 overflow-hidden">
 
             {/* 2단 레이아웃 */}
-            <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr]">
+            <div className="flex flex-col lg:flex-row">
 
-              {/* 왼쪽: 사진 */}
-              <div className="relative h-28 lg:h-auto min-h-[170px]">
+              {/* 왼쪽: 사진 + 이름 */}
+              <div className="flex flex-col items-center p-8 bg-navy-50 lg:w-48 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-navy-100">
                 <Image
                   src="/chairman.jpg"
                   alt="전동진 이사장"
-                  fill
-                  className="object-cover object-top"
+                  width={148}
+                  height={185}
+                  className="rounded-xl object-contain w-full"
                 />
-                {/* 하단 이름 오버레이 */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/90 to-transparent px-6 py-6">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold mb-1">
-                    Chairman
-                  </p>
-                  <p className="text-xl font-bold text-white font-heading">전동진</p>
-                  <p className="text-sm text-white/60 mt-0.5">한영자 희망 장학재단 이사장</p>
+                <div className="mt-4 text-center">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-1">Chairman</p>
+                  <p className="text-[15px] font-bold text-navy-900 font-heading">전동진</p>
+                  <p className="text-[12px] text-navy-400 mt-0.5">한영자 희망 장학재단 이사장</p>
                 </div>
               </div>
 
               {/* 오른쪽: 인사말 */}
-              <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
+              <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center flex-1">
 
                 {/* 헤드라인 */}
                 <div className="mb-10">
