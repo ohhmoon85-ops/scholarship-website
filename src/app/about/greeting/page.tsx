@@ -19,7 +19,6 @@ export default function GreetingPage() {
               Chairman&apos;s Message
             </p>
             <h1 className="text-3xl font-bold text-white font-heading">이사장 인사말</h1>
-            <p className="mt-2 text-sm text-white/50">한영자 희망 장학재단 이사장 전동진</p>
           </div>
         </div>
 
@@ -28,10 +27,10 @@ export default function GreetingPage() {
           <div className="bg-white rounded-2xl shadow-sm border border-navy-100 overflow-hidden">
 
             {/* 2단 레이아웃 */}
-            <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr]">
+            <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr]">
 
-              {/* 왼쪽: 대형 사진 */}
-              <div className="relative h-80 lg:h-auto min-h-[480px]">
+              {/* 왼쪽: 사진 */}
+              <div className="relative h-56 lg:h-auto min-h-[340px]">
                 <Image
                   src="/chairman.jpg"
                   alt="전동진 이사장"
@@ -74,11 +73,6 @@ export default function GreetingPage() {
                   </p>
                 </div>
 
-                {/* 서명 */}
-                <div className="mt-10 pt-8 border-t border-navy-100 text-right">
-                  <p className="text-[15px] font-bold text-navy-900 font-heading">전동진</p>
-                  <p className="text-[13px] text-navy-400 mt-0.5">한영자 희망 장학재단 이사장</p>
-                </div>
 
               </div>
             </div>
