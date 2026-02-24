@@ -30,12 +30,12 @@ export default function GreetingPage() {
             <div className="flex flex-col lg:flex-row">
 
               {/* 왼쪽: 사진 + 이름 */}
-              <div className="flex flex-col items-center p-8 bg-navy-50 lg:w-48 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-navy-100">
+              <div className="flex flex-col items-center pt-14 pb-8 px-8 bg-navy-50 lg:w-56 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-navy-100">
                 <Image
                   src="/chairman.jpg"
                   alt="전동진 이사장"
-                  width={148}
-                  height={185}
+                  width={180}
+                  height={225}
                   className="rounded-xl object-contain w-full"
                 />
                 <div className="mt-4 text-center">
