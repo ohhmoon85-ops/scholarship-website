@@ -42,10 +42,10 @@ export const metadata: Metadata = {
     description: "미래의 인재를 키우는 장학재단입니다. 꿈을 향한 여러분의 도전을 응원합니다.",
     images: [
       {
-        url: "/logo3.png",
-        width: 800,
-        height: 400,
-        alt: "한영자 희망 장학재단 로고",
+        url: "/hero-bg.png",
+        width: 1200,
+        height: 630,
+        alt: "한영자 희망 장학재단",
       },
     ],
   },
