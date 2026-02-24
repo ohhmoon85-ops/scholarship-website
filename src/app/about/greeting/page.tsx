@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -28,8 +29,8 @@ export default function GreetingPage() {
 
             {/* 프로필 */}
             <div className="flex flex-col sm:flex-row items-start gap-6 pb-10 mb-10 border-b border-navy-100">
-              <div className="flex-shrink-0 flex h-20 w-20 items-center justify-center rounded-2xl bg-navy-900 text-white text-2xl font-bold font-heading">
-                전
+              <div className="flex-shrink-0 h-24 w-24 rounded-2xl overflow-hidden">
+                <Image src="/chairman.jpg" alt="전동진 이사장" width={96} height={96} className="w-full h-full object-cover object-top" />
               </div>
               <div>
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold mb-1">
