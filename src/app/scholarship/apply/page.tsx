@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ApplyUploadForm from "./ApplyUploadForm";
 
 export const metadata: Metadata = {
   title: "장학 신청 | 한영자 희망 장학재단",
@@ -123,6 +124,18 @@ export default function ApplyPage() {
             <p className="mt-5 text-[13px] text-navy-400 bg-navy-50 rounded-lg p-3">
               ※ 상세 서류 목록은 모집 공고 시 안내됩니다. 서류 양식은 공고문에 첨부됩니다.
             </p>
+          </div>
+
+          {/* 온라인 신청 */}
+          <div className="bg-white rounded-2xl border border-navy-100 shadow-sm p-8 sm:p-10">
+            <h2 className="text-xl font-bold text-navy-900 font-heading mb-2 flex items-center gap-2">
+              <span className="h-1 w-6 rounded bg-gold inline-block" />
+              온라인 신청하기
+            </h2>
+            <p className="text-[13.5px] text-navy-500 mb-8">
+              제출 서류를 하나의 ZIP 파일로 압축한 후 아래 양식을 작성하여 제출해 주세요.
+            </p>
+            <ApplyUploadForm />
           </div>
 
           {/* 문의 */}

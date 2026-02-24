@@ -51,7 +51,7 @@ export default function GreetingPage() {
                 {/* 헤드라인 */}
                 <div className="mb-10">
                   <span className="inline-block w-10 h-1 rounded bg-gold mb-6" />
-                  <h2 className="font-heading text-[1.6rem] sm:text-[2rem] lg:text-[2.25rem] font-bold text-navy-900 leading-[1.3]">
+                  <h2 className="font-heading text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] font-bold text-navy-900 leading-[1.3]">
                     국가가 키운 삼양,<br />
                     이제 대한민국의<br />내일을 키우겠습니다.
                   </h2>
@@ -60,14 +60,24 @@ export default function GreetingPage() {
                 {/* 본문 */}
                 <div className="space-y-6 text-[15.5px] leading-[1.95] text-navy-700">
                   <p>
-                    삼양은 국가의 신뢰를 바탕으로 성장한 방산기업입니다.
-                    그 소중한 성원을 이제 사회적 책임으로 되돌리려 합니다.
+                    삼양은 국가의 신뢰를 바탕으로 반세기가 넘는 시간 동안 성장해 온
+                    방산기업입니다. 국가와 국민이 보내 주신 그 소중한 신뢰와 성원을,
+                    이제 사회적 책임으로 되돌리고자 합니다.
                   </p>
                   <p>
-                    우리 한영자 희망 장학재단은 자립준비청년들이 불평등한 출발선을 넘어
-                    당당히 홀로서기 할 수 있도록 실질적인 성장의 사다리가 되겠습니다.
-                    기업이 국가에 응답하고, 청년과 함께 내일의 안보와 산업을 이끌어가는
-                    선순환을 삼양이 시작합니다.
+                    한영자 희망 장학재단은 자립준비청년들이 저마다의 출발점에서 힘차게
+                    꿈을 향해 나아갈 수 있도록 실질적인 성장의 디딤돌이 되겠습니다.
+                    학업의 부담을 함께 나누고, 미래를 향한 한 걸음 한 걸음을 곁에서
+                    응원하겠습니다.
+                  </p>
+                  <p>
+                    기업이 국가에 응답하고, 청년이 내일의 안보와 산업을 이끌어가는
+                    선순환—그 첫 번째 출발점을 삼양과 한영자 희망 장학재단이 함께
+                    만들어 가겠습니다.
+                  </p>
+                  <p>
+                    여러분의 가능성과 도전을 진심으로 믿으며, 한 분 한 분의 여정을
+                    성심으로 함께하겠습니다.
                   </p>
                 </div>
 
