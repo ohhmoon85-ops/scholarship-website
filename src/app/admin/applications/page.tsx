@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Download, Search, FileArchive, LogIn, User, School, Calendar } from "lucide-react";
+import { Download, Search, FileArchive, LogIn, User, School, Calendar, MapPin } from "lucide-react";
 
 interface Application {
+  region: string;
   name: string;
   email: string;
   school: string;
@@ -21,7 +22,7 @@ export default function AdminApplicationsPage() {
   const [applications, setApplications] = useState<Application[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     setLoading(true);
     setAuthError("");
@@ -146,6 +147,12 @@ export default function AdminApplicationsPage() {
                       <User className="h-3.5 w-3.5 text-navy-400" />
                       {app.name}
                     </span>
+                    {app.region && (
+                      <span className="flex items-center gap-1 text-[12px] font-semibold text-gold bg-gold/10 border border-gold/20 rounded-full px-2 py-0.5">
+                        <MapPin className="h-3 w-3" />
+                        {app.region}
+                      </span>
+                    )}
                     <span className="flex items-center gap-1 text-[13px] text-navy-500">
                       <School className="h-3.5 w-3.5 text-navy-300" />
                       {app.school} · {app.department}

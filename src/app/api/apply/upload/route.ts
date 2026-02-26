@@ -7,14 +7,15 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
 
     const file = formData.get("file") as File | null;
+    const region = (formData.get("region") as string | null)?.trim();
     const name = (formData.get("name") as string | null)?.trim();
     const email = (formData.get("email") as string | null)?.trim();
     const school = (formData.get("school") as string | null)?.trim();
     const department = (formData.get("department") as string | null)?.trim();
 
-    if (!file || !name || !school || !department) {
+    if (!file || !region || !name || !school || !department) {
       return NextResponse.json(
-        { error: "이름, 학교, 학과, 파일은 필수 입력 항목입니다." },
+        { error: "지역 협의회명, 이름, 학교, 학과, 파일은 필수 입력 항목입니다." },
         { status: 400 }
       );
     }
@@ -54,6 +55,7 @@ export async function POST(request: NextRequest) {
 
     // 메타데이터 저장
     const meta = {
+      region,
       name,
       email: email ?? "",
       school,

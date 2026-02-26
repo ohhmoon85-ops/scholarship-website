@@ -1,9 +1,29 @@
 "use client";
 
-import { useState, useRef, ChangeEvent, FormEvent } from "react";
+import { useState, useRef, ChangeEvent } from "react";
 import { Upload, CheckCircle, AlertCircle, FileArchive, X } from "lucide-react";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+const REGIONS = [
+  "서울특별시",
+  "부산광역시",
+  "대구광역시",
+  "인천광역시",
+  "광주광역시",
+  "대전광역시",
+  "울산광역시",
+  "세종특별자치시",
+  "경기도",
+  "강원특별자치도",
+  "충청북도",
+  "충청남도",
+  "전북특별자치도",
+  "전라남도",
+  "경상북도",
+  "경상남도",
+  "제주특별자치도",
+];
 
 export default function ApplyUploadForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -37,7 +57,7 @@ export default function ApplyUploadForm() {
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: { preventDefault(): void; currentTarget: HTMLFormElement; target: EventTarget }) => {
     e.preventDefault();
     if (!file) {
       setMessage("ZIP 파일을 선택해 주세요.");
@@ -98,7 +118,26 @@ export default function ApplyUploadForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* 이름 */}
+
+      {/* 지역 협의회명 */}
+      <div>
+        <label className="block text-[13px] font-semibold text-navy-700 mb-1.5">
+          지역 협의회명 <span className="text-red-500">*</span>
+        </label>
+        <select
+          name="region"
+          required
+          defaultValue=""
+          className="w-full rounded-xl border border-navy-200 px-4 py-2.5 text-[14.5px] text-navy-900 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all bg-white"
+        >
+          <option value="" disabled>지역을 선택해 주세요</option>
+          {REGIONS.map((r) => (
+            <option key={r} value={r}>{r}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* 이름 / 이메일 */}
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-[13px] font-semibold text-navy-700 mb-1.5">

@@ -35,15 +35,7 @@ const navItems = [
     children: [
       { label: "공지사항", href: "/news/notice" },
       { label: "이사회 결과", href: "/news/board" },
-      { label: "언론보도", href: "/news/press" },
-    ],
-  },
-  {
-    label: "미디어 센터",
-    href: "/media",
-    children: [
-      { label: "유튜브 채널", href: "/media/youtube" },
-      { label: "포토갤러리", href: "/media/gallery" },
+      { label: "포토 갤러리", href: "/media/gallery" },
     ],
   },
 ];

@@ -36,7 +36,7 @@ export default function GreetingPage() {
                   alt="전동진 이사장"
                   width={180}
                   height={225}
-                  className="rounded-xl object-contain w-full"
+                  className="rounded-xl object-contain w-full max-w-[110px] lg:max-w-[180px]"
                 />
                 <div className="mt-4 text-center">
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-1">Chairman</p>
@@ -60,9 +60,10 @@ export default function GreetingPage() {
                 {/* 본문 */}
                 <div className="space-y-6 text-[15.5px] leading-[1.95] text-navy-700">
                   <p>
-                    삼양은 국가의 신뢰를 바탕으로 반세기가 넘는 시간 동안 성장해 온
-                    방산기업입니다. 국가와 국민이 보내 주신 그 소중한 신뢰와 성원을,
-                    이제 사회적 책임으로 되돌리고자 합니다.
+                    삼양은 창업회장 한영자 회장님의 헌신과 뚝심 위에 반세기가 넘는
+                    시간 동안 성장해 온 방산기업입니다. 그 귀한 이름을 기리고자,
+                    삼양 박재준 회장님께서 직접 설립을 주도하고 재원을 출연하여
+                    한영자 희망 장학재단을 설립하였습니다.
                   </p>
                   <p>
                     한영자 희망 장학재단은 자립준비청년들이 저마다의 출발점에서 힘차게
