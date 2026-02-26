@@ -57,7 +57,7 @@ export default function ApplyUploadForm() {
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
-  const handleSubmit = async (e: { preventDefault(): void; currentTarget: HTMLFormElement; target: EventTarget }) => {
+  const handleSubmit = async (e: { preventDefault(): void; currentTarget: HTMLFormElement }) => {
     e.preventDefault();
     if (!file) {
       setMessage("ZIP 파일을 선택해 주세요.");
@@ -80,7 +80,7 @@ export default function ApplyUploadForm() {
         setStatus("success");
         setMessage(data.message);
         setFile(null);
-        (e.target as HTMLFormElement).reset();
+        (e.currentTarget as HTMLFormElement).reset();
         if (fileInputRef.current) fileInputRef.current.value = "";
       } else {
         setStatus("error");
@@ -104,7 +104,7 @@ export default function ApplyUploadForm() {
         <p className="text-[14.5px] text-navy-500 leading-relaxed max-w-sm">
           {message}
           <br />
-          심사 결과는 추후 이메일로 개별 안내해 드립니다.
+          심사 결과는 추후 각 지역 협의회를 통해 안내해 드립니다.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -137,61 +137,6 @@ export default function ApplyUploadForm() {
         </select>
       </div>
 
-      {/* 이름 / 이메일 */}
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-[13px] font-semibold text-navy-700 mb-1.5">
-            신청자 이름 <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="name"
-            required
-            placeholder="홍길동"
-            className="w-full rounded-xl border border-navy-200 px-4 py-2.5 text-[14.5px] text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
-          />
-        </div>
-        <div>
-          <label className="block text-[13px] font-semibold text-navy-700 mb-1.5">
-            이메일
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="example@email.com"
-            className="w-full rounded-xl border border-navy-200 px-4 py-2.5 text-[14.5px] text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
-          />
-        </div>
-      </div>
-
-      {/* 학교 / 학과 */}
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-[13px] font-semibold text-navy-700 mb-1.5">
-            학교명 <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="school"
-            required
-            placeholder="○○대학교"
-            className="w-full rounded-xl border border-navy-200 px-4 py-2.5 text-[14.5px] text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
-          />
-        </div>
-        <div>
-          <label className="block text-[13px] font-semibold text-navy-700 mb-1.5">
-            학과(부) <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="department"
-            required
-            placeholder="경영학과"
-            className="w-full rounded-xl border border-navy-200 px-4 py-2.5 text-[14.5px] text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
-          />
-        </div>
-      </div>
-
       {/* 파일 업로드 */}
       <div>
         <label className="block text-[13px] font-semibold text-navy-700 mb-1.5">
@@ -205,9 +150,7 @@ export default function ApplyUploadForm() {
           <div className="flex items-center gap-3 rounded-xl border border-gold/40 bg-gold/5 px-4 py-3">
             <FileArchive className="h-5 w-5 text-gold flex-shrink-0" />
             <div className="flex-1 min-w-0">
-              <p className="text-[13.5px] font-semibold text-navy-800 truncate">
-                {file.name}
-              </p>
+              <p className="text-[13.5px] font-semibold text-navy-800 truncate">{file.name}</p>
               <p className="text-[11px] text-navy-400">
                 {(file.size / 1024 / 1024).toFixed(1)} MB
               </p>
@@ -260,8 +203,7 @@ export default function ApplyUploadForm() {
             className="mt-0.5 h-4 w-4 flex-shrink-0 accent-gold"
           />
           <span className="text-[13px] text-navy-600 leading-relaxed">
-            본인은 위에 입력한 정보가 사실임을 확인하며, 개인정보 수집·이용에
-            동의합니다.
+            제출 서류에 포함된 개인정보의 수집·이용에 동의합니다.
           </span>
         </label>
 

@@ -1,14 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Download, Search, FileArchive, LogIn, User, School, Calendar, MapPin } from "lucide-react";
+import { Download, Search, FileArchive, LogIn, Calendar, MapPin } from "lucide-react";
 
 interface Application {
   region: string;
-  name: string;
-  email: string;
-  school: string;
-  department: string;
   originalFilename: string;
   savedFilename: string;
   fileSize: number;
@@ -83,7 +79,6 @@ export default function AdminApplicationsPage() {
             <p className="text-center text-[13px] text-navy-400 mb-6">
               장학 신청서 관리 페이지입니다.
             </p>
-
             <form onSubmit={handleLogin} className="space-y-4">
               <input
                 type="password"
@@ -118,9 +113,7 @@ export default function AdminApplicationsPage() {
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold mb-1">Admin</p>
             <h1 className="text-2xl font-bold text-white">장학 신청서 관리</h1>
           </div>
-          <span className="text-[13px] text-white/50">
-            총 {applications.length}건
-          </span>
+          <span className="text-[13px] text-white/50">총 {applications.length}건</span>
         </div>
       </div>
 
@@ -141,30 +134,18 @@ export default function AdminApplicationsPage() {
                   <FileArchive className="h-5 w-5 text-navy-400" />
                 </div>
 
-                <div className="flex-1 min-w-0 space-y-1">
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <span className="flex items-center gap-1 text-[14.5px] font-bold text-navy-900">
-                      <User className="h-3.5 w-3.5 text-navy-400" />
-                      {app.name}
-                    </span>
-                    {app.region && (
-                      <span className="flex items-center gap-1 text-[12px] font-semibold text-gold bg-gold/10 border border-gold/20 rounded-full px-2 py-0.5">
-                        <MapPin className="h-3 w-3" />
-                        {app.region}
-                      </span>
-                    )}
-                    <span className="flex items-center gap-1 text-[13px] text-navy-500">
-                      <School className="h-3.5 w-3.5 text-navy-300" />
-                      {app.school} · {app.department}
-                    </span>
-                  </div>
+                <div className="flex-1 min-w-0 space-y-1.5">
+                  <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-gold bg-gold/10 border border-gold/20 rounded-full px-3 py-0.5">
+                    <MapPin className="h-3.5 w-3.5" />
+                    {app.region}
+                  </span>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[12px] text-navy-400">
-                    {app.email && <span>{app.email}</span>}
                     <span className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       {formatDate(app.uploadedAt)}
                     </span>
                     <span>{formatSize(app.fileSize)}</span>
+                    <span className="truncate max-w-[200px]">{app.originalFilename}</span>
                   </div>
                 </div>
 
