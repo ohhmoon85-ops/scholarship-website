@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BookOpen, Users, ClipboardList, Newspaper, PlayCircle, Info } from "lucide-react";
+import { BookOpen, Users, ClipboardList, Newspaper, Image as ImageIcon, Info } from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -13,7 +13,7 @@ const quickLinks = [
   { label: "장학 신청", desc: "지원 자격 및 서류", href: "/scholarship/apply", Icon: ClipboardList },
   { label: "장학생 현황", desc: "선발 결과 안내", href: "/scholarship/status", Icon: Users },
   { label: "공지사항", desc: "재단 소식 및 공지", href: "/news/notice", Icon: Newspaper },
-  { label: "미디어 센터", desc: "유튜브·포토갤러리", href: "/media/youtube", Icon: PlayCircle },
+  { label: "포토 갤러리", desc: "행사 사진 모아보기", href: "/media/gallery", Icon: ImageIcon },
 ];
 
 export default function HeroSection() {
