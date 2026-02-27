@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Download, Search, FileArchive, LogIn, Calendar, MapPin } from "lucide-react";
+import { Download, Search, FileArchive, LogIn, Calendar, MapPin, PackageOpen } from "lucide-react";
 
 interface Application {
   region: string;
@@ -10,6 +10,8 @@ interface Application {
   fileSize: number;
   uploadedAt: string;
 }
+
+const BATCH_SIZE = 10;
 
 export default function AdminApplicationsPage() {
   const [password, setPassword] = useState("");
@@ -39,11 +41,22 @@ export default function AdminApplicationsPage() {
     setLoading(false);
   };
 
+  // 개별 파일 다운로드
   const handleDownload = (filename: string) => {
     const url = `/api/apply/download?password=${encodeURIComponent(password)}&filename=${encodeURIComponent(filename)}`;
     const a = document.createElement("a");
     a.href = url;
     a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+
+  // 묶음(ZIP) 다운로드
+  const handleBatchDownload = (batchIndex: number) => {
+    const url = `/api/apply/download-zip?password=${encodeURIComponent(password)}&batch=${batchIndex}`;
+    const a = document.createElement("a");
+    a.href = url;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -64,6 +77,14 @@ export default function AdminApplicationsPage() {
     bytes >= 1024 * 1024
       ? `${(bytes / 1024 / 1024).toFixed(1)} MB`
       : `${(bytes / 1024).toFixed(0)} KB`;
+
+  // 10개 단위로 배치 분할
+  const batchCount = Math.ceil(applications.length / BATCH_SIZE);
+  const batches = Array.from({ length: batchCount }, (_, i) => ({
+    index: i,
+    start: i * BATCH_SIZE + 1,
+    end: Math.min((i + 1) * BATCH_SIZE, applications.length),
+  }));
 
   if (!authed) {
     return (
@@ -117,7 +138,35 @@ export default function AdminApplicationsPage() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8 space-y-8">
+
+        {/* 묶음 다운로드 섹션 */}
+        {applications.length > 0 && (
+          <div className="bg-white rounded-2xl border border-navy-100 shadow-sm p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <PackageOpen className="h-5 w-5 text-navy-400" />
+              <h2 className="text-[15px] font-bold text-navy-900">묶음 다운로드</h2>
+              <span className="text-[12px] text-navy-400">(10개 단위)</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {batches.map((b) => (
+                <button
+                  key={b.index}
+                  onClick={() => handleBatchDownload(b.index)}
+                  className="flex items-center gap-2 rounded-xl bg-navy-900 text-white text-[13px] font-semibold px-4 py-2.5 hover:bg-navy-700 transition-colors"
+                >
+                  <Download className="h-4 w-4" />
+                  {b.start}~{b.end}번 묶음 ZIP
+                </button>
+              ))}
+            </div>
+            <p className="mt-3 text-[12px] text-navy-400">
+              각 버튼을 클릭하면 해당 범위의 신청서 ZIP 파일이 하나의 ZIP으로 묶여서 다운로드됩니다.
+            </p>
+          </div>
+        )}
+
+        {/* 개별 신청서 목록 */}
         {applications.length === 0 ? (
           <div className="bg-white rounded-2xl border border-navy-100 shadow-sm p-16 text-center">
             <Search className="h-10 w-10 text-navy-200 mx-auto mb-4" />
@@ -130,7 +179,12 @@ export default function AdminApplicationsPage() {
                 key={i}
                 className="bg-white rounded-2xl border border-navy-100 shadow-sm p-6 flex flex-col sm:flex-row sm:items-center gap-4"
               >
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-navy-50">
+                {/* 번호 */}
+                <div className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-navy-100 text-navy-500 text-[12px] font-bold">
+                  {i + 1}
+                </div>
+
+                <div className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-navy-50">
                   <FileArchive className="h-5 w-5 text-navy-400" />
                 </div>
 
@@ -154,7 +208,7 @@ export default function AdminApplicationsPage() {
                   className="flex-shrink-0 flex items-center gap-2 rounded-full bg-navy-900 text-white text-[13px] font-semibold px-4 py-2 hover:bg-navy-700 transition-colors"
                 >
                   <Download className="h-4 w-4" />
-                  다운로드
+                  개별 다운로드
                 </button>
               </div>
             ))}
