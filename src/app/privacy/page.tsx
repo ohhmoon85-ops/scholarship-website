@@ -1,17 +1,122 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Construction } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침 | 한영자 희망 장학재단",
 };
+
+const sections = [
+  {
+    title: "제1조 (개인정보의 처리 목적)",
+    content: `한영자 희망 장학재단(이하 "재단")은 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 「개인정보 보호법」 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.
+
+1. 장학생 선발 및 장학금 지급
+   - 장학 신청 접수, 심사, 합격 통보, 장학금 지급 처리
+
+2. 홈페이지 이용자 문의 처리
+   - 문의사항 확인, 사실 조사 후 처리 결과 통보
+
+3. 재단 사업 운영 및 통계
+   - 장학 사업 운영 현황 파악 및 통계 분석`,
+  },
+  {
+    title: "제2조 (개인정보의 처리 및 보유 기간)",
+    content: `재단은 법령에 따른 개인정보 보유·이용 기간 또는 정보주체로부터 개인정보를 수집 시에 동의받은 개인정보 보유·이용 기간 내에서 개인정보를 처리·보유합니다.
+
+1. 장학 신청 관련 개인정보
+   - 보유 기간: 장학금 지급 완료 후 5년
+
+2. 문의 처리 관련 개인정보
+   - 보유 기간: 문의 처리 완료 후 3년
+
+3. 법령에 따라 보존이 필요한 경우 해당 법령에서 정한 기간을 따릅니다.`,
+  },
+  {
+    title: "제3조 (처리하는 개인정보의 항목)",
+    content: `재단은 다음의 개인정보 항목을 처리하고 있습니다.
+
+1. 장학 신청
+   - 필수: 성명, 생년월일, 성별, 연락처(전화번호), 이메일 주소, 주소, 학교명, 학과, 학년
+   - 선택: 자립생활계획서, 성적증명서, 재학증명서 등 첨부 서류
+
+2. 홈페이지 문의
+   - 필수: 성명, 이메일 주소, 문의 내용
+   - 선택: 연락처
+
+3. 자동 수집 항목
+   - IP 주소, 쿠키, 방문 일시, 서비스 이용 기록`,
+  },
+  {
+    title: "제4조 (개인정보의 제3자 제공)",
+    content: `재단은 정보주체의 개인정보를 제1조(개인정보의 처리 목적)에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 「개인정보 보호법」 제17조 및 제18조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.
+
+현재 재단은 정보주체의 개인정보를 제3자에게 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
+
+- 정보주체가 사전에 동의한 경우
+- 법령에 따라 제공이 요구되는 경우
+- 장학 사업 관련 협력 기관(한국아동복지협회 등)과의 업무 협조 시 최소한의 정보를 제공하는 경우 (이 경우 사전 동의를 받습니다)`,
+  },
+  {
+    title: "제5조 (개인정보처리의 위탁)",
+    content: `재단은 원활한 개인정보 업무처리를 위하여 다음과 같이 개인정보 처리업무를 위탁할 수 있습니다.
+
+위탁 업무 발생 시 「개인정보 보호법」 제26조에 따라 위탁업무 수행 목적 외 개인정보 처리 금지, 기술적·관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리·감독, 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하겠습니다.
+
+현재 별도의 위탁 업체는 없으며, 위탁이 발생할 경우 본 방침을 통해 공개합니다.`,
+  },
+  {
+    title: "제6조 (정보주체의 권리·의무 및 행사 방법)",
+    content: `정보주체는 재단에 대해 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.
+
+1. 개인정보 열람 요구
+2. 오류 등이 있을 경우 정정 요구
+3. 삭제 요구
+4. 처리 정지 요구
+
+위에 따른 권리 행사는 재단에 대해 서면, 전자우편 등을 통하여 하실 수 있으며, 재단은 이에 대해 지체 없이 조치하겠습니다.
+
+정보주체가 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 재단은 정정 또는 삭제를 완료할 때까지 당해 개인정보를 이용하거나 제공하지 않습니다.`,
+  },
+  {
+    title: "제7조 (개인정보의 안전성 확보 조치)",
+    content: `재단은 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다.
+
+1. 관리적 조치
+   - 내부관리계획 수립·시행, 개인정보 취급 직원의 최소화 및 교육
+
+2. 기술적 조치
+   - 개인정보처리시스템 등의 접근권한 관리, 접근통제시스템 설치
+   - 개인정보의 암호화, 보안프로그램 설치
+
+3. 물리적 조치
+   - 전산실, 자료보관실 등의 접근 통제`,
+  },
+  {
+    title: "제8조 (개인정보 보호책임자)",
+    content: `재단은 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.
+
+개인정보 보호책임자
+- 성명: 전동진 (이사장)
+- 소속: 재단법인 한영자 희망 장학재단
+- 연락처: 추후 안내 예정
+
+정보주체는 재단의 서비스를 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자에게 문의하실 수 있습니다.`,
+  },
+  {
+    title: "제9조 (개인정보 처리방침의 변경)",
+    content: `이 개인정보처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경 내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 공지사항을 통하여 고지할 것입니다.
+
+본 방침은 2026년 3월 1일부터 시행됩니다.`,
+  },
+];
 
 export default function PrivacyPage() {
   return (
     <>
       <Header />
       <main className="min-h-screen bg-navy-50 pt-[104px]">
+        {/* 페이지 헤더 */}
         <div className="bg-navy-900 py-14">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold mb-3">Privacy Policy</p>
@@ -20,14 +125,35 @@ export default function PrivacyPage() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-navy-100 mb-6">
-            <Construction className="h-9 w-9 text-navy-400" />
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+          {/* 시행일 배너 */}
+          <div className="mb-8 rounded-xl bg-gold/10 border border-gold/20 px-5 py-4">
+            <p className="text-[13.5px] text-navy-800">
+              <span className="font-bold text-gold">시행일:</span> 2026년 3월 1일&nbsp;&nbsp;
+              <span className="text-navy-400">|</span>&nbsp;&nbsp;
+              재단법인 한영자 희망 장학재단(이사장: 전동진)은 「개인정보 보호법」에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하게 처리할 수 있도록 다음과 같이 개인정보처리방침을 수립·공개합니다.
+            </p>
           </div>
-          <h2 className="text-xl font-bold text-navy-900 font-heading mb-3">문서 준비 중</h2>
-          <p className="text-[15px] text-navy-500 leading-relaxed max-w-sm">
-            개인정보처리방침을 준비하고 있습니다.<br />
-            재단 법인 설립 완료 후 공시될 예정입니다.
+
+          {/* 본문 섹션들 */}
+          <div className="space-y-6">
+            {sections.map((section) => (
+              <div
+                key={section.title}
+                className="bg-white rounded-2xl border border-navy-100 shadow-sm px-8 py-7"
+              >
+                <h2 className="text-[16px] font-bold text-navy-900 font-heading mb-4 pb-3 border-b border-navy-100">
+                  {section.title}
+                </h2>
+                <div className="text-[14px] text-navy-700 leading-relaxed whitespace-pre-line">
+                  {section.content}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 text-[12px] text-navy-400 text-center">
+            © 2026 재단법인 한영자 희망 장학재단. 본 개인정보처리방침은 법령 변경 시 개정될 수 있습니다.
           </p>
         </div>
       </main>
