@@ -25,12 +25,23 @@ const process = [
   { step: "6", title: "장학금 수여식", date: "2026. 04. 30", desc: "제1기 장학금 수여식 개최 및 장학금 지급" },
 ];
 
-const documents = [
+const commonDocs = [
   "장학금 지원 신청서 (소정 양식)",
-  "자립준비청년 확인서 (관할 지자체 발급)",
   "재학증명서",
-  "성적증명서 (최근 학기)",
   "자립생활계획서 또는 생활 계획서 (자유 양식)",
+];
+
+const freshmanDocs = [
+  "고등학교 졸업 증명서",
+  "고교 성적 증명서",
+];
+
+const undergraduateDocs = [
+  "성적증명서 (직전 학기 포함)",
+];
+
+const optionalDocs = [
+  "개인 보유 자격증 (해당자만 제출)",
   "기타 재단에서 요청하는 서류",
 ];
 
@@ -113,14 +124,65 @@ export default function ApplyPage() {
               <span className="h-1 w-6 rounded bg-gold inline-block" />
               제출 서류
             </h2>
-            <ul className="space-y-2.5">
-              {documents.map((doc, i) => (
+
+            {/* 공통 서류 */}
+            <p className="text-[12px] font-bold uppercase tracking-widest text-navy-400 mb-3">공통 서류</p>
+            <ul className="space-y-2.5 mb-8">
+              {commonDocs.map((doc, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-[14.5px] text-navy-700">
                   <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold flex-shrink-0" />
                   {doc}
                 </li>
               ))}
             </ul>
+
+            {/* 신입생 / 대학생 구분 */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+              {/* 신입생 */}
+              <div className="rounded-xl overflow-hidden border border-navy-100">
+                <div className="bg-[#C07A3A] px-5 py-3 flex items-center gap-2">
+                  <span className="text-white text-lg">📄</span>
+                  <p className="text-[13.5px] font-bold text-white">신입생 (고교 졸업 후 바로 진학자)</p>
+                </div>
+                <div className="bg-[#6B7FA3] px-5 py-5">
+                  <ul className="space-y-2">
+                    {freshmanDocs.map((doc, i) => (
+                      <li key={i} className="text-[14px] text-white text-center">{doc}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* 대학생 */}
+              <div className="rounded-xl overflow-hidden border border-navy-100">
+                <div className="bg-[#C07A3A] px-5 py-3 flex items-center gap-2">
+                  <span className="text-white text-lg">📄</span>
+                  <p className="text-[13.5px] font-bold text-white">대학생 (재학생)</p>
+                </div>
+                <div className="bg-[#6B7FA3] px-5 py-5 flex items-center justify-center min-h-[80px]">
+                  <ul className="space-y-2">
+                    {undergraduateDocs.map((doc, i) => (
+                      <li key={i} className="text-[14px] text-white text-center">{doc}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* 공통/선택 */}
+            <div className="rounded-xl overflow-hidden border border-navy-100">
+              <div className="bg-[#4A5F7A] px-5 py-3 flex items-center justify-center">
+                <p className="text-[13.5px] font-bold text-white">공통 / 선택 (Common / Optional)</p>
+              </div>
+              <div className="bg-[#6B7FA3] px-5 py-5">
+                <ul className="space-y-2">
+                  {optionalDocs.map((doc, i) => (
+                    <li key={i} className="text-[14px] text-white text-center">{doc}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
             <p className="mt-5 text-[13px] text-navy-400 bg-navy-50 rounded-lg p-3">
               ※ 상세 서류 목록은 모집 공고 시 안내됩니다. 서류 양식은 공고문에 첨부됩니다.
             </p>
