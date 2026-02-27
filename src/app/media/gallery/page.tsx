@@ -33,10 +33,10 @@ export default function GalleryPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <Link
-              href="/media/youtube"
+              href="/news/notice"
               className="rounded-full bg-navy-900 text-white text-[14px] font-semibold px-6 py-3 hover:bg-navy-800 transition-colors"
             >
-              미디어 센터 보기
+              공지사항 보기
             </Link>
           </div>
         </div>
