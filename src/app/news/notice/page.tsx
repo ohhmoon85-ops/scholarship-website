@@ -4,15 +4,17 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Breadcrumb from "@/components/news/Breadcrumb";
 import { Badge } from "@/components/ui/badge";
-import { getNotices } from "@/lib/content";
-import { formatDate } from "@/lib/content/markdown";
-import { Pin, Paperclip } from "lucide-react";
+import { readCollection } from "@/lib/cms-storage";
+import type { CmsNotice } from "@/lib/cms-storage";
+import { Pin, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "공지사항",
+  title: "공지사항 | 한영자 희망 장학재단",
   description: "장학재단 공지사항",
 };
+
+export const revalidate = 60;
 
 const categoryBadgeMap: Record<string, "gold" | "navy" | "outline"> = {
   모집: "gold",
@@ -21,10 +23,22 @@ const categoryBadgeMap: Record<string, "gold" | "navy" | "outline"> = {
   행사: "outline",
 };
 
+function isNew(dateStr: string, withinDays = 14): boolean {
+  const d = new Date(dateStr);
+  const now = new Date();
+  const diff = (now.getTime() - d.getTime()) / (1000 * 60 * 60 * 24);
+  return diff >= 0 && diff <= withinDays;
+}
+
+function formatDate(d: string) {
+  return d.replace(/-/g, ".");
+}
+
 export default async function NoticeListPage() {
-  const notices = await getNotices();
-  const pinned = notices.filter((n) => n.isPinned);
-  const regular = notices.filter((n) => !n.isPinned);
+  const notices = await readCollection<CmsNotice>("notices");
+  const sorted = [...notices].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const pinned = sorted.filter((n) => n.isPinned);
+  const regular = sorted.filter((n) => !n.isPinned);
 
   return (
     <>
@@ -65,22 +79,20 @@ export default async function NoticeListPage() {
                         <Badge variant={categoryBadgeMap[notice.category] ?? "navy"} className="text-[11px]">
                           {notice.category}
                         </Badge>
-                        {notice.isNew && (
+                        {isNew(notice.date) && (
                           <span className="text-[10px] font-bold text-red-500 bg-red-50 border border-red-100 px-1.5 py-0.5 rounded">
                             NEW
                           </span>
                         )}
-                        {notice.attachments && notice.attachments.length > 0 && (
-                          <Paperclip className="h-3.5 w-3.5 text-navy-400" />
-                        )}
                       </div>
-                      <p className="text-sm font-semibold text-navy-800 group-hover:text-primary transition-colors">
+                      <p className="text-sm font-semibold text-navy-800 group-hover:text-primary transition-colors line-clamp-1">
                         {notice.title}
                       </p>
                     </div>
-                    <span className="flex-shrink-0 text-xs text-navy-400 mt-1">
-                      {formatDate(notice.date)}
-                    </span>
+                    <div className="flex-shrink-0 flex items-center gap-2 mt-1">
+                      <span className="text-xs text-navy-400">{formatDate(notice.date)}</span>
+                      <ChevronRight className="h-4 w-4 text-navy-300" />
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -98,36 +110,34 @@ export default async function NoticeListPage() {
                   )}
                 >
                   <span className="mt-1 flex-shrink-0 w-8 text-center text-sm text-navy-300">
-                    {notice.id}
+                    {idx + 1}
                   </span>
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-1">
                       <Badge variant={categoryBadgeMap[notice.category] ?? "navy"} className="text-[11px]">
                         {notice.category}
                       </Badge>
-                      {notice.isNew && (
+                      {isNew(notice.date) && (
                         <span className="text-[10px] font-bold text-red-500 bg-red-50 border border-red-100 px-1.5 py-0.5 rounded">
                           NEW
                         </span>
-                      )}
-                      {notice.attachments && notice.attachments.length > 0 && (
-                        <Paperclip className="h-3.5 w-3.5 text-navy-400" aria-label="첨부파일 있음" />
                       )}
                     </div>
                     <p className="text-sm font-medium text-navy-700 group-hover:text-primary transition-colors line-clamp-1">
                       {notice.title}
                     </p>
                   </div>
-                  <span className="flex-shrink-0 text-xs text-navy-400 mt-1">
-                    {formatDate(notice.date)}
-                  </span>
+                  <div className="flex-shrink-0 flex items-center gap-2 mt-1">
+                    <span className="text-xs text-navy-400">{formatDate(notice.date)}</span>
+                    <ChevronRight className="h-4 w-4 text-navy-300" />
+                  </div>
                 </Link>
               ))
-            ) : (
+            ) : pinned.length === 0 ? (
               <div className="py-16 text-center text-sm text-navy-400">
                 등록된 공지사항이 없습니다.
               </div>
-            )}
+            ) : null}
           </div>
 
           {/* 총 건수 */}
