@@ -80,7 +80,7 @@ export default function Footer() {
                 {["㈜제오홀딩스", "삼양화학공업㈜", "㈜삼양정밀화학"].map((name) => (
                   <span
                     key={name}
-                    className="text-[12px] text-white/45 border border-white/10 rounded-md px-2.5 py-1"
+                    className="text-[14px] text-white/60 border border-white/15 rounded-md px-3 py-1.5"
                   >
                     {name}
                   </span>
@@ -90,7 +90,7 @@ export default function Footer() {
 
             {/* 법적 정보 */}
             <p className="text-[12px] text-white/20">
-              이사장: 전동진 &nbsp;|&nbsp; 재단법인 등록 절차 진행 중
+              이사장: 전동진 &nbsp;|&nbsp; 재단법인 등록 완료
             </p>
           </div>
 
