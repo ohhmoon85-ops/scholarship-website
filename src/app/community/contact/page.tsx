@@ -12,17 +12,17 @@ const contactItems = [
   {
     Icon: MapPin,
     label: "주소",
-    value: "서울특별시 (주소 확정 후 업데이트 예정)",
+    value: "서울특별시 서초구 반포대로27길 16, 박빌딩 9층 (우편번호: 06655)",
   },
   {
     Icon: Phone,
     label: "대표전화",
-    value: "추후 안내 예정 (2026년 2월 법인 설립 이후)",
+    value: "02-3488-5551  |  팩스 02-521-3107",
   },
   {
     Icon: Mail,
     label: "이메일",
-    value: "추후 안내 예정 (2026년 2월 법인 설립 이후)",
+    value: "dongjin6445@gmail.com",
   },
   {
     Icon: Clock,
@@ -67,8 +67,7 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-6 rounded-xl bg-gold/5 border border-gold/20 px-5 py-4 text-[13.5px] text-navy-700">
-              <strong className="text-navy-900">※ 안내</strong> — 재단은 현재 법인 설립 절차를 진행 중입니다.
-              2026년 2월 법인 설립 완료 이후 정확한 연락처가 안내될 예정입니다.
+              <strong className="text-navy-900">※ 안내</strong> — 장학 신청과 관련한 문의는 위 연락처로 평일 업무시간 내에 연락해 주시기 바랍니다.
             </div>
           </div>
 

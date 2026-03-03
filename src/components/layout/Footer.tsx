@@ -52,15 +52,15 @@ export default function Footer() {
             <div className="grid gap-2.5 text-[13px] text-white/50">
               <div className="flex items-start gap-2.5">
                 <MapPin className="h-3.5 w-3.5 mt-0.5 flex-shrink-0 text-white/30" />
-                <span>서울특별시 (주소 확정 후 업데이트 예정)</span>
+                <span>서울특별시 서초구 반포대로27길 16, 박빌딩 9층 (06655)</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="h-3.5 w-3.5 flex-shrink-0 text-white/30" />
-                <span>대표전화 <span className="text-white/70">추후 안내 예정</span></span>
+                <span>대표전화 <span className="text-white/70">02-3488-5551</span>&nbsp;<span className="text-white/30">|</span>&nbsp;팩스 <span className="text-white/70">02-521-3107</span></span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="h-3.5 w-3.5 flex-shrink-0 text-white/30" />
-                <span>이메일 <span className="text-white/70">추후 안내 예정</span></span>
+                <span>이메일 <span className="text-white/70">dongjin6445@gmail.com</span></span>
               </div>
               <div className="flex items-start gap-2.5">
                 <Clock className="h-3.5 w-3.5 mt-0.5 flex-shrink-0 text-white/30" />
